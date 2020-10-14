@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>💝情人节快乐💝</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="Webphoto/js/layui/css/layui.css" />
+		<link rel="stylesheet" href="Webphoto/css/animate.min.css">
+	</head>
+	<style>
+		html,
+			body {
+				height: 100%;
+			}
+
+			body {
+				background-color: #000000;
+				margin: 0;
+				font-family: Helvetica, sans-serif;
+				;
+				overflow: hidden;
+			}
+
+			a {
+				color: #ffffff;
+			}
+
+			#info {
+				position: absolute;
+				width: 100%;
+				color: #ffffff;
+				padding: 5px;
+				font-family: Monospace;
+				font-size: 13px;
+				font-weight: bold;
+				text-align: center;
+				z-index: 1;
+			}
+
+			#menu {
+				position: absolute;
+				bottom: 20px;
+				width: 100%;
+				text-align: center;
+			}
+
+			.element {
+				width: 100px;
+				/* 120 160 */
+				height: 100px;
+				box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.5);
+				border: 1px solid rgba(127, 255, 255, 0.25);
+				text-align: center;
+				cursor: default;
+			}
+
+			.element:hover {
+				box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.75);
+				border: 1px solid rgba(127, 255, 255, 0.75);
+			}
+
+			.element img {
+				width: 100px;
+				height: 100px;
+			}
+
+			.element .number {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				font-size: 12px;
+				color: rgba(127, 255, 255, 0.75);
+			}
+
+			.element .symbol {
+				position: absolute;
+				top: 40px;
+				left: 0px;
+				right: 0px;
+				font-size: 60px;
+				font-weight: bold;
+				color: rgba(255, 255, 255, 0.75);
+				text-shadow: 0 0 10px rgba(0, 255, 255, 0.95);
+			}
+
+			.element .details {
+				position: absolute;
+				bottom: 15px;
+				left: 0px;
+				right: 0px;
+				font-size: 12px;
+				color: rgba(127, 255, 255, 0.75);
+			}
+
+			button {
+				color: rgba(127, 255, 255, 0.75);
+				background: transparent;
+				outline: 1px solid rgba(127, 255, 255, 0.75);
+				border: 0px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+
+			button:hover {
+				background-color: rgba(0, 255, 255, 0.5);
+			}
+
+			button:active {
+				color: #000000;
+				background-color: rgba(0, 255, 255, 0.75);
+			}
+
+			.show_info {
+				position: fixed;
+				background-color: rgba(0, 0, 0, .6);
+				padding: 10px;
+				width: 300px;
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+				border-radius: 5px;
+				box-shadow: 0 0 10px 0 #fff;
+				top: 30%;
+			}
+
+			.show_info img {
+				display: block;
+				margin: auto;
+				border-radius: 5px;
+				box-shadow: 0 0 10px 0 #888;
+			}
+
+			.show_info .intro {
+				color: #fff;
+				text-indent: 20px;
+				margin-top: 10px;
+				height: 65px;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+			}
+
+			.show_info .info_my {
+				text-align: center;
+			}
+
+			.show_info .info_my>* {
+				display: inline-block !important;
+				vertical-align: middle;
+			}
+
+			.show_info .info_my .info_mem {
+				color: #fff;
+				max-width: 120px;
+			}
+
+			.show_info .info_my .info_mem>div {
+				text-align: left;
+			}
+
+			.show_info .info_my .info_mem>div.nickname {
+				max-width: 120px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			
+			#clickImg {
+				position: fixed;
+				background-color: rgba(0, 0, 0, .6);
+				padding: 10px;
+				/* width: 800px; */
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+				border-radius: 5px;
+				box-shadow: 0 0 10px 0 #fff;
+				top: 30%;
+				background-position: center;
+			}
+			
+			#clickImg img {
+				display: block;
+				margin: auto;
+				border-radius: 5px;
+				box-shadow: 0 0 10px 0 #888;
+				background-position: center;
+			}
+			.layui-icon{
+				font-size: 28px;
+				color: #ffffff;
+			}
+			body{
+				background: url(Webphoto/img/bg.jpg);
+				/* background: url(Webphoto/img/bg3.jpg); */
+				width: 100%;
+				height: 100%;
+				background-position: center;
+			}
+			.layui-btn{
+				background-color: #21252b;
+			}
+			.layui-btn:hover{
+				background-color: #21252b;
+			}
+		</style>
+	<body>
+		<script src="Webphoto/js/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Webphoto/js/jquery-1.8.3.js"></script>
+		<script src="Webphoto/js/three.js"></script>
+		<script src="Webphoto/js/tween.min.js"></script>
+		<script src="Webphoto/js/TrackballControls.js"></script>
+		<script src="Webphoto/js/CSS3DRenderer.js"></script>
+		<script src="Webphoto/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Webphoto/js/webphoto.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 图片容器 -->
+		<div id="container"></div>
+		<!-- 背景音乐 -->
+		<audio id="bgmusic" autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="Webphoto/mp3/m3.mp3">
+			你的浏览器版本太低，不支持audio标签
+		</audio>
+		<!-- 功能按钮 -->
+		<div id="info">
+			<!-- 3D签到墙（使用官方demo源元素周期表修改） -->
+			<div class="layui-btn-group">
+				<button id="table" type="button" class="layui-btn layui-btn-sm "><a class="layui-icon layui-icon-app"></a></button>
+				<button id="sphere" type="button" class="layui-btn layui-btn-sm "><a class="layui-icon layui-icon-website"></a></button>
+				<button id="helix" type="button" class="layui-btn layui-btn-sm "><a class="layui-icon layui-icon-circle"></a></button>
+				<button id="grid" type="button" class="layui-btn layui-btn-sm "><a class="layui-icon layui-icon-template-1"></a></button>
+				<button id="upImg" type="button" class="layui-btn layui-btn-sm "><a class="layui-icon layui-icon-upload-drag"></a></button>
+				<input type="button" id="btnHide" class="none" style="display: none;">
+				<button id="refresh" type="button" class="layui-btn layui-btn-sm "><a class="layui-icon layui-icon-refresh-3"></a></button>
+			</div>
+		</div>
+		<!-- 操作按钮 -->
+		<div id="menu">
+			<div class="layui-inline">
+				<button id="subtraction" class="layui-btn layui-btn-sm layui-icon layui-icon-subtraction" lay-event="add" style="font-size: 18px;">100</button>
+			</div>
+			<div class="layui-inline ">
+				<div class="layui-input-inline " style="width: 50px;">
+					<input type="text" id="number" value="" class="layui-input" disabled="">
+				</div>
+			</div>
+			<div class="layui-inline">
+				<button id="addition" class="layui-btn layui-btn-sm layui-icon layui-icon-addition" lay-event="add" style="font-size: 18px;">100</button>
+			</div>
+		</div>
+
+		<!-- <div class="show_info animated" style="display:none;">
+			<div class="info_my">
+				<img src="img/c.png" />
+				<div class="info_mem">
+					
+				</div>
+			</div>
+		</div> -->
+
+		<!-- 图片弹窗 -->
+		<div class="clickImg animated" style="display:none;">
+			<img id="clickImg" src="" />
+		</div>
+		<!-- 遮罩 -->
+		<div id="shade"></div>
+		<style type="text/css">
+			#container {
+				z-index: 0;
+			}
+
+			#menu {
+				z-index: 0;
+			}
+
+			#shade {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				z-index: 99;
+				opacity: 0.2;
+				display: none;
+				position: fixed;
+				background-color: rgba(0, 0, 0, 0.6);
+			}
+
+			.clickImg {
+				/* position:absolute; */
+				z-index: 100;
+				/* background-position: center; */
+			}
+		</style>
+		<script type="text/javascript">
+			var token = "86e0b403e6a14f9aa95ebfcd5e28654d";
+			sessionStorage.setItem('token', token);
+			
+			if(token == null || token == ""){
+				location.href = 'index.html'; //登录
+			};
+			
+			layui.use(['util', 'laydate', 'layer'], function() {
+				var util = layui.util,
+					laydate = layui.laydate,
+					$ = layui.$,
+					layer = layui.layer;
+				//固定块
+				util.fixbar({
+					bar1: '&#xe6c6;',
+					bar2: true,
+					css: {
+						right: 10,
+						bottom: 10,
+						// width:20,
+						// height:20,
+					},
+					bgcolor: '#393D49',
+					click: function(type) {
+						if (type === 'bar1') {
+							$.post(ServerURL + "/webPhoto/like", {token: token}, function(data) {
+								if (data.status == 0) {
+									layer.msg('谢谢点赞', {
+										icon: 6,
+										time: 500
+									});
+								}
+							});
+						} else if (type === 'bar2') {
+							// layer.msg('两个 bar 都可以设定是否开启');
+							layer.open({
+								type: 2 ,//此处以iframe举例
+								title: "使用说明",
+								area: ['99%', '70%'], //大小
+								shade: 0.6, //遮罩透明度
+								shadeClose: true, //点击遮罩关闭
+								id: 'LAY_layuipro', //设定一个id，防止重复弹出
+								maxmin: false,
+								offset: 'auto', //居中弹出
+								content: 'Webphoto/css/direction.html',
+								btn: ['关闭'] ,//只是为了演示
+								btnAlign: 'c',//按钮位置
+								yes: function() {
+									layer.closeAll();
+								},
+								zIndex: layer.zIndex, //重点1
+								success: function(layero) {
+									layer.setTop(layero); //重点2
+								}
+							});
+						}
+					}
+				});
+
+
+
+			});
+		</script>
+	</body>
+</html>

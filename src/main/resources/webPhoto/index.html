@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Web相册</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="Webphoto/js/layui/css/layui.css" media="all">
+		<!-- <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all"> -->
+		<link rel="stylesheet" href="Webphoto/css/login.css" media="all">
+	</head>
+	<body>
+
+				<div class="layadmin-user-login-box layadmin-user-login-header">
+					<h3 style="color: #E7E1CD;">为武汉加油！为中国加油！</h3>
+				</div>
+		<div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" style="display: none;">
+
+			<div id="loginDiv" class="layadmin-user-login-main">
+				<div class="layadmin-user-login-box layadmin-user-login-header">
+					<h1>WELCOME</h1>
+					<!-- <h2>LOGIN</h2> -->
+					<p></p>
+				</div>
+				<div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+					<div class="layui-form-item">
+						<label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
+						<input type="text" name="username" id="username" lay-verify="required" placeholder="用户名" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
+						<input type="password" name="password" id="password" lay-verify="required" placeholder="密码" class="layui-input">
+					</div>
+					<div class="layui-form-item" style="margin-bottom: 20px;">
+						<a id="forgetPassword" class="layadmin-user-jump-change layadmin-link" style="margin-top: 7px;">忘记密码？</a>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-inline" style="width: 100%;">
+							<button id="login" lay-submit="" lay-filter="login" class="layui-btn" style="width: 100%;">登 录</button>
+						</div>
+						<div class="layui-inline" style="width: 101%;">
+							<button id="register" class="layui-btn layui-btn-primary" style="width: 47.5%;">注 册</button>
+							<button id="common" class="layui-btn layui-btn-warm" style="width: 47.5%;">游 客</button>
+						</div>
+					</div>
+				</div>
+				<div class="layadmin-user-login-box layadmin-user-login-header">
+					<!-- <h3 style="color: red;">预览请点击“游客”进入</h3>
+					<h3 style="color: red;">游客上传内容，所有人可见</h3>
+					<h3 style="color: red;">本网站纯属娱乐</h3> -->
+					<fieldset class="layui-elem-field site-demo-button" style="margin-top: 0px;">
+					<!-- <legend>其他</legend> -->
+						<div style="margin-left: 20px;margin-top: 10px;margin-bottom: 10px;">
+							<p class="layui-icon">Hi! Everybody My name is Yuanye</p>
+							<p class="layui-icon">咳咳！！正经点</p>
+							<p class="layui-icon">在朋友圈看到的视频啦相册啊</p>
+							<p class="layui-icon">属实差了点逼格</p>
+							<p class="layui-icon">SO</p>
+							<p class="layui-icon">欢迎使用本网站</p>
+							<p class="layui-icon">创建专属账号</p>
+							<p class="layui-icon">上传你们幸福照片</p>
+							<p class="layui-icon">分享专属账号给你的另一半</p>
+							<p class="layui-icon">送给Ta一个小惊喜吧</p>
+						</div>
+					</fieldset>
+					<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;">
+					<!-- <legend>其他</legend> -->
+						<div style="margin-left: 20px;margin-top: 10px;margin-bottom: 10px;">
+							<p class="layui-icon" style="color: red;">预览请点击“游客”进入</p>
+							<p class="layui-icon" style="color: red;">游客区为公共内容</p>
+							<p class="layui-icon" style="color: red;">欢迎大家上传你们最美的瞬间</p>
+							<p class="layui-icon" style="color: red;">游客上传内容，所有人可见</p>
+						</div>
+					</fieldset>
+					<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;">
+					<!-- <legend>其他</legend> -->
+						<div style="margin-left: 20px;margin-top: 10px;margin-bottom: 10px;">
+							<p class="layui-icon" style="color: red;">第一次加载较慢请耐心等待</p>
+							<p class="layui-icon" style="color: red;">本网站纯属娱乐</p>
+							<p class="layui-icon" style="color: red;">还请各位大神高抬贵手</p>
+							<p class="layui-icon" style="color: red;">服务器到期后所有内容将全部删除</p>
+						</div>
+					</fieldset>
+					<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;">
+					<!-- <legend>其他</legend> -->
+						<div style="margin-left: 20px;margin-top: 10px;margin-bottom: 10px;">
+							<p class="layui-icon">如有BUG或建议请及时与我联系</p>
+							<img src="Webphoto/img/wx.jpg" height="150px" width="150px">
+						</div>
+					</fieldset>
+				</div>
+			</div>
+
+			<div id="registerDiv" class="layadmin-user-login-main" style="display: none;">
+				<div class="layadmin-user-login-box layadmin-user-login-header">
+					<h2>注册</h2>
+					<p>务必认真填写</p>
+				</div>
+				<div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+					<div class="layui-form-item">
+						<label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
+						<input type="text" name="username" id="username" lay-verify="required" placeholder="用户名" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
+						<input type="text" name="password" id="password" lay-verify="required" placeholder="密码" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
+						<input type="text" name="realname" id="realname" lay-verify="required" placeholder="真实姓名" class="layui-input">
+					</div>
+					<div class="layui-form-item" style="margin-bottom: 20px;">
+						<a href="index.html" class="layadmin-user-jump-change layadmin-link" style="margin-top: 7px;">返回登录</a>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-inline" style="width: 100%;">
+							<button id="registerSubmit" lay-submit="" lay-filter="registerSubmit" class="layui-btn layui-btn-fluid">注 册</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="updatePassDiv" class="layadmin-user-login-main" style="display: none;">
+				<div class="layadmin-user-login-box layadmin-user-login-header">
+					<h2>修改密码</h2>
+					<p></p>
+				</div>
+				<div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+					<div class="layui-form-item">
+						<label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
+						<input type="text" name="username" id="username" lay-verify="required" placeholder="用户名" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
+						<input type="text" name="realname" id="realname" lay-verify="required" placeholder="真实姓名" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
+						<input type="text" name="password" id="password" lay-verify="required" placeholder="密码" class="layui-input">
+					</div>
+					<div class="layui-form-item" style="margin-bottom: 20px;">
+						<a href="index.html" class="layadmin-user-jump-change layadmin-link" style="margin-top: 7px;">返回登录</a>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-inline" style="width: 100%;">
+							<button id="updatePassSubmit" lay-submit="" lay-filter="updatePassSubmit" class="layui-btn layui-btn-fluid">确 认
+								修 改</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="layui-trans layadmin-user-login-footer">
+
+				<p>© 2020 <a href="" target="_blank">yuanyevip.com 版权所有</a></p>
+				<p>
+					<a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank">
+						<img src="Webphoto/img/ghs.png" >
+						鄂ICP备20002557号
+					</a>
+				</p>
+
+			</div>
+
+			<!--<div class="ladmin-user-login-theme">
+      <script type="text/html" template>
+        <ul>
+          <li data-theme=""><img src="{{ layui.setter.base }}style/res/bg-none.jpg"></li>
+          <li data-theme="#03152A" style="background-color: #03152A;"></li>
+          <li data-theme="#2E241B" style="background-color: #2E241B;"></li>
+          <li data-theme="#50314F" style="background-color: #50314F;"></li>
+          <li data-theme="#344058" style="background-color: #344058;"></li>
+          <li data-theme="#20222A" style="background-color: #20222A;"></li>
+        </ul>
+      </script>
+    </div>-->
+
+		</div>
+		<script src="Webphoto/js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Webphoto/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Webphoto/js/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'upload'], function() {
+				var $ = layui.$,
+					form = layui.form,
+					layer = layui.layer;
+
+				form.render();
+				
+				$("#register").one("click", function() {
+					$("#registerDiv").show();
+					$("#loginDiv").hide();
+				});
+
+				$("#forgetPassword").one("click", function() {
+					$("#updatePassDiv").show();
+					$("#loginDiv").hide();
+				});
+				
+				$("#common").one("click", function() {
+					sessionStorage.setItem('token', "common");
+					location.href = 'webphoto.html'; //后台主页
+				});
+
+
+				//监听提交	登录
+				form.on('submit(login)', function(data) {
+					// layer.alert(JSON.stringify(data.field), {
+					// 	title: '最终的提交信息'
+					// });
+					// return false;
+					var params = {
+						username:data.field.username,
+						password:data.field.password,
+					}
+					$.post(ServerURL + "/webPhoto/checkUser", params, function(data) {
+						if (data.status == '0') {
+							sessionStorage.setItem('token', data.data.id);
+					
+							//登入成功的提示与跳转
+							layer.msg('登录成功', {
+								offset: '15px',
+								icon: 1,
+								time: 500
+							}, function() {
+								location.href = 'webphoto.html'; //后台主页
+							});
+					
+						} else {
+							layer.msg(data.message);
+						}
+					});
+				});
+				//注册
+				form.on('submit(registerSubmit)', function(data) {
+					// layer.alert(JSON.stringify(data.field), {
+					// 	title: '最终的提交信息'
+					// });
+					// return false;
+					var params = {
+						username:data.field.username,
+						password:data.field.password,
+						realname:data.field.realname,
+					}
+					$.post(ServerURL + "/webPhoto/registerUser", params, function(data) {
+						if (data.status == '0') {
+							layer.msg('注册成功', {
+								offset: '15px',
+								icon: 1,
+								time: 500
+							}, function() {
+								location.href = 'index.html'; //后台主页
+							});
+						} else {
+							layer.msg(data.message);
+						}
+					});
+				});
+				//修改密码
+				form.on('submit(updatePassSubmit)', function(data) {
+					// layer.alert(JSON.stringify(data.field), {
+					// 	title: '最终的提交信息'
+					// });
+					// return false;
+					var params = {
+						username:data.field.username,
+						password:data.field.password,
+						realname:data.field.realname,
+					}
+					$.post(ServerURL + "/webPhoto/updatePass", params, function(data) {
+						if (data.status == '0') {
+							//登入成功的提示与跳转
+							layer.msg('修改成功', {
+								offset: '15px',
+								icon: 1,
+								time: 500
+							}, function() {
+								location.href = 'index.html'; //
+							});
+						} else {
+							layer.msg(data.message);
+						}
+					});
+				});
+
+
+				
+
+
+
+
+			});
+		</script>
+	</body>
+</html>
